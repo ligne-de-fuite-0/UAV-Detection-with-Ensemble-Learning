@@ -1,0 +1,36 @@
+{
+  "data": {
+    "train_dir": "./dataset1/train",
+    "val_dir": "./dataset1/val",
+    "test_dir": "./dataset1/test",
+    "num_workers": 4
+  },
+  "resnet": {
+    "batch_size": 128,
+    "epochs": 200,
+    "learning_rate": 0.1,
+    "momentum": 0.9,
+    "weight_decay": 5e-4,
+    "milestones": [100, 150],
+    "gamma": 0.1,
+    "early_stopping_patience": 20
+  },
+  "convnext": {
+    "batch_size": 32,
+    "epochs": 30,
+    "learning_rate": 0.0001,
+    "step_size": 5,
+    "gamma": 0.1,
+    "early_stopping_patience": 7
+  },
+  "transforms": {
+    "resnet": {
+      "normalize_mean": [0.4914, 0.4822, 0.4465],
+      "normalize_std": [0.2023, 0.1994, 0.2010]
+    },
+    "convnext": {
+      "normalize_mean": [0.485, 0.456, 0.406],
+      "normalize_std": [0.229, 0.224, 0.225]
+    }
+  }
+}
